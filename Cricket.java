@@ -17,9 +17,9 @@ class Player{
         return isOut;
     }
 
-    public void setOut() {
+    /*public void setOut() {
         this.isOut = true;
-    }
+    }*/
 }
 
 class Team{
@@ -61,12 +61,12 @@ class RandomEventGenerator {
     }
 }
 
-class WatchController {
+class MatchController {
     private final Team team1;
     private final Team team2;
     private final int overs;
 
-    public WatchController(Team team1, Team team2, int overs){
+    public MatchController(Team team1, Team team2, int overs){
         this.team1 = team1;
         this.team2 = team2;
         this.overs = overs;
@@ -98,7 +98,7 @@ class WatchController {
         int currentPlayerIndex =0;
 
         for (int i=0; i<balls; i++){
-            if (currentPlayerIndex >= team.getPlayers().size()){
+            if (currentPlayerIndex == team.getPlayers().size()){
                 System.out.println("all players are out");
                 break;
             }
@@ -108,7 +108,7 @@ class WatchController {
 
             if(event.equals("W")) {
                 System.out.println(team.getPlayers().get(currentPlayerIndex).getName() + " is out");
-                team.getPlayers().get(currentPlayerIndex).setOut();
+                //team.getPlayers().get(currentPlayerIndex).setOut();
                 currentPlayerIndex++;
             }
             else{
@@ -129,7 +129,7 @@ public class Cricket {
         Team team1 = new Team("team A", team1Players);
         Team team2 = new Team("team B", team2Players);
 
-        WatchController matchController = new WatchController(team1, team2, 2);
+        MatchController matchController = new MatchController(team1, team2, 2);
         matchController.startMatch();
     }
 }
