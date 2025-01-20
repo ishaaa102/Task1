@@ -17,7 +17,7 @@ class Player{
         return isOut;
     }
 
-    /*public void setOut() {
+    /*public void setOut() {       // useful when we want to track which player is out
         this.isOut = true;
     }*/
 }
