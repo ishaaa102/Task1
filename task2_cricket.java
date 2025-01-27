@@ -62,12 +62,6 @@ class Team {
     public boolean hasOnePlayerLeft() {
         return players.size() == 1;
     }
-
-    public void removePlayer() {
-        if (players.size() > 0) {
-            players.remove(0);
-        }
-    }
 }
 
 class RandomEventGenerator {
@@ -122,7 +116,6 @@ class MatchController {
 
             if (event.equals("W")) {
                 System.out.println(currentBatsman.getName() + " is out.");
-                team.removePlayer();
                 currentPlayerIndex++;
                 if (currentPlayerIndex < team.getPlayers().size()) {
                     currentBatsman = team.getPlayers().get(currentPlayerIndex);
